@@ -1,0 +1,12 @@
+---
+- name: 'Install CUDA reposittory'
+  zypper_repository:
+      name: "cuda-opensuse15-x86_64"
+      repo: "{{nvidia_cuda_repo}}"
+      auto_import_keys: yes
+
+
+- name: 'Install CUDA'
+  zypper:
+      name: 'cuda'
+      state: 'latest'
